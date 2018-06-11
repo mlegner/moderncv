@@ -4,6 +4,9 @@
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
+%
+% Personal modifications for Andrew McAllister's CV/Resume can be found 
+% by searcing for: AEM
 
 
 %-------------------------------------------------------------------------------
@@ -276,10 +279,11 @@
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
 
 % colors
+% AEM: Color changes in main cls file to avoid having 'color files'
 %-------
-\definecolor{color0}{rgb}{0,0,0}% main default color, normally left to black
-\definecolor{color1}{rgb}{0,0,0}% primary scheme color
-\definecolor{color2}{rgb}{0,0,0}% secondary scheme color
+\definecolor{color0}{HTML}{02111B}% black
+\definecolor{color1}{HTML}{053C5E}% light blue
+\definecolor{color2}{HTML}{5D737E}% dark grey
 \definecolor{color3}{rgb}{0,0,0}% tertiary scheme color
 
 % symbols
