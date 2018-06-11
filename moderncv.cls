@@ -279,7 +279,9 @@
 \newcommand*{\extrainfo}[1]{\def\@extrainfo{#1}}
 
 % colors
-% AEM: Color changes in main cls file to avoid having 'color files'
+% AEM: Attempt to change the way colors work, but eventually went back
+% to using a "color.sty" file to avoid headaches with the way colors
+% are setup.
 %-------
 \definecolor{color0}{HTML}{02111B}% black
 \definecolor{color1}{HTML}{053C5E}% light blue
