@@ -1,5 +1,5 @@
 # Andrew McAllister's Use of: 
-# moderncv: a modern curriculum vitae class
+## moderncv: a modern curriculum vitae class
 
 I've gone ahead and made some relatively minor changes to the source  for
 **Moderncv**, which are documented in the tracking provided by git. If you are
