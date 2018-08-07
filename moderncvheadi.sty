@@ -160,7 +160,7 @@
           \phonesdetails% needs to be pre-rendered as loops and tabulars seem to conflict
           \ifthenelse{\isundefined{\@email}}{}{\makenewline\emaillink{\@email} & \emailsymbol \\}%
           \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\httplink{\@homepage} & \homepagesymbol \\}%
-          \socialsdetails% needs to be pre-rendered as loops and tabulars seem to conflict
+%          \socialsdetails% needs to be pre-rendered as loops and tabulars seem to conflict
           \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}
         \end{tabular}
       }
