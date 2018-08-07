@@ -61,6 +61,10 @@
 \DeclareOption{draft}{\setlength\overfullrule{5pt}}
 \DeclareOption{final}{\setlength\overfullrule{0pt}}
 
+% include coverletter or not (related to page numbering)
+\DeclareOption{cover}{\def\@includecoverletter}
+\DeclareOption{nocover}{}
+
 % execute default options
 \ExecuteOptions{a4paper,11pt,final}
 
@@ -78,6 +82,8 @@
 %\def\AtEndPreamble{\g@addto@macro\@endpreamblehook}
 %\let\document@original\document
 %\def\document{\endgroup\@endpreamblehook\begingroup\document@original}
+
+\RequirePackage{refcount}
 
 % if... then... else... constructs
 \RequirePackage{ifthen}
@@ -141,6 +147,10 @@
 \RequirePackage{graphicx}
 
 % headers and footers
+\newcommand*{\thesecondlastpage}{%
+  \the\numexpr(\getrefbykeydefault{lastpage}{page}{0})-1\relax
+}
+
 \RequirePackage{fancyhdr}
 \fancypagestyle{plain}{
   \renewcommand{\headrulewidth}{0pt}
@@ -159,7 +169,17 @@
           \newlength{\pagenumberwidth}%
           \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
-            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            \@ifundefined{@includecoverletter}
+            {
+            % the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+              \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}
+            }
+            {
+            % the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+              \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\thesecondlastpage}}
+            }
+         }
+
           \pagestyle{plain}}{}}\fi}%
   \AtEndDocument{\label{lastpage}}}
 \pagestyle{plain}
