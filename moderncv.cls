@@ -216,7 +216,7 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
-\RequirePackage{l3regex}
+\RequirePackage{expl3}
 
 %-------------------------------------------------------------------------------
 %                class definition
