@@ -5,7 +5,7 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 %
-% Personal modifications for Andrew McAllister's CV/Resume can be found 
+% Personal modifications for Andrew McAllister's CV/Resume can be found
 % by searcing for: AEM
 
 
@@ -128,7 +128,7 @@
   \RequirePackage[unicode]{hyperref}% unicode is required for unicode pdf metadata
   \hypersetup{
     breaklinks,
-    baseurl       = http://,
+    baseurl       = https://,
     pdfborder     = 0 0 0,
     pdfpagemode   = \pdfpagemode,
     pdfstartpage  = 1,
@@ -376,7 +376,7 @@
 % usage: \moderncvfoot[<optional foot option>]{<foot variant number>}
 \newcommand*{\moderncvfoot}[2][]{%
   \@loadmoderncvpackage[#1]{foot}{#2}}
-  
+
 % loads a color scheme
 % usage: \moderncvcolor{<color scheme name>}
 \newcommand*{\moderncvcolor}[1]{%
@@ -528,12 +528,12 @@
     {\href{#2}{#2}}%
     {\href{#2}{#1}}}
 
-% makes a http hyperlink
+% makes a https hyperlink
 % usage: \httplink[optional text]{link}
 \newcommand*{\httplink}[2][]{%
   \ifthenelse{\equal{#1}{}}%
-    {\href{http://#2}{#2}}%
-    {\href{http://#2}{#1}}}
+    {\href{https://#2}{#2}}%
+    {\href{https://#2}{#1}}}
 
 % makes an email hyperlink
 % usage: \emaillink[optional text]{link}
@@ -541,7 +541,7 @@
   \ifthenelse{\equal{#1}{}}%
     {\href{mailto:#2}{#2}}%
     {\href{mailto:#2}{#1}}}
-    
+
 % makes a tel hyperlink
 % usage: \tellink[optional text]{link}
 \newcommand*{\tellink}[2][]{%
